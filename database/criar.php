@@ -19,11 +19,7 @@ $comandos = [
     "INSERT INTO produtos (nome, unidade, quantidade, minimo, preco) VALUES ('Ovos', 'dúzia', 10, 6, 20)",
     "INSERT INTO produtos (nome, unidade, quantidade, minimo, preco) VALUES ('Leite', 'litro', 24, 12, 5)",
     "INSERT INTO produtos (nome, unidade, quantidade, minimo, preco) VALUES ('Manteiga', 'pote', 3, 4, 18)",
-
     "INSERT INTO produtos (nome, unidade, quantidade, minimo, preco) VALUES ('Sal salgado', 'pacote', 2, 3, 3)",
-
-
-
     'CREATE TABLE movimentacoes (
         id INTEGER PRIMARY KEY,
         produto_id INTEGER NOT NULL REFERENCES produtos(id),
