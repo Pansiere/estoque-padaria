@@ -22,6 +22,7 @@ class PainelController
             'titulo' => 'Painel',
             'produtos' => $produtos,
             'total' => $total,
+            'erro' => $_GET['erro'] ?? '',
         ]);
     }
 }

@@ -3,6 +3,10 @@
 <h1>Estoque da padaria</h1>
 <p>São <?= count($produtos) ?> produtos no estoque.</p>
 
+<?php if ($erro === 'estoque') { ?>
+    <p><strong>Não há estoque suficiente para essa saída.</strong></p>
+<?php } ?>
+
 <table>
     <tr>
         <th>Produto</th>
@@ -28,5 +32,31 @@
 </table>
 
 <p>Valor do estoque: R$ <?= number_format($total, 2, ',', '.') ?></p>
+
+<h2>Registrar entrada ou saída</h2>
+
+<form action="/movimentacoes" method="post">
+    <p>
+        <label>Produto
+            <select name="produto_id" required>
+                <?php foreach ($produtos as $produto) { ?>
+                    <option value="<?= $produto['id'] ?>"><?= $produto['nome'] ?></option>
+                <?php } ?>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Tipo
+            <select name="tipo" required>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Quantidade <input type="number" name="quantidade" min="1" required></label>
+    </p>
+    <button type="submit">Salvar</button>
+</form>
 
 <?php require dirname(__DIR__) . '/partials/rodape.php'; ?>
