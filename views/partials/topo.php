@@ -7,5 +7,6 @@
 <body>
 <nav>
     <a href="/">Painel</a> |
-    <a href="/historico">Histórico</a>
+    <a href="/historico">Histórico</a> |
+    <a href="/produtos/novo">Cadastrar Produto</a>
 </nav>

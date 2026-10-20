@@ -4,10 +4,13 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use App\Controllers\PainelController;
 use App\Controllers\HistoricoController;
+use App\Controllers\ProdutosController;
 
 $rotas = [
     'GET /' => [PainelController::class, 'index'],
     'GET /historico' => [HistoricoController::class, 'index'],
+    'GET /produtos/novo' => [ProdutosController::class, 'novo'],
+    'POST /produtos/salvar' => [ProdutosController::class, 'salvar'],
 ];
 
 $pedido = $_SERVER['REQUEST_METHOD'] . ' ' . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
