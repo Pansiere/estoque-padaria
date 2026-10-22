@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Banco;
 use App\View;
 
-class ProdutosController
+class ProdutoController
 {
     public function novo(): void
     {
